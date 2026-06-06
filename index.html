@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Fitness | Performance & Santé</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ==========================================================================
+       ICÔNES POUR L'ÉCRAN D'ACCUEIL MOBILE (FAVICONS)
+       ========================================================================== -->
+    <!-- Icône standard pour le navigateur (Onglet PC) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.png">
+
+    <!-- Icône officielle pour Android / Chrome (Ajouter à l'écran d'accueil) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logo.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/logo.png">
+
+    <!-- Icône officielle pour iOS / iPhone / Safari -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.png">
+
+    <!-- Couleur de la barre d'adresse Chrome sur Mobile (Orange primary) -->
+    <meta name="theme-color" content="#ff5e00">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">FIT<span>COACH</span></div>
+        <nav class="nav-links">
+            <a href="#hero">Accueil</a>
+            <a href="#about">À Propos</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Galerie</a>
+            <a href="#contact" class="btn-nav">Contact</a>
+        </nav>
+        <div class="burger-menu" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Transforme ton corps, <br><span>Domine tes objectifs</span></h1>
+            <p>Un accompagnement sur-mesure par un professionnel diplômé pour sculpter ton physique et booster ton énergie.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Réserver une séance d'essai</a>
+                <a href="#services" class="btn btn-secondary">Découvrir les offres</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="/assets/about.jpg" alt="Le Coach en plein entraînement">
+                <div class="experience-badge">
+                    <h3>7+</h3>
+                    <p>Ans d'Expérience</p>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <span class="subtitle">Découvre ton Coach</span>
+                <h2>Passionné, Diplômé & <br><span>Dédié à ta Réussite</span></h2>
+                <p class="description">
+                    Bonjour ! Je suis ton coach. Mon but est de t'accompagner pas à pas pour transformer ton style de vie. Que ce soit pour une perte de poids, une prise de masse musculaire ou une remise en forme complète, nous bâtirons le programme qui te correspond.
+                </p>
+                
+                <div class="credentials">
+                    <div class="credential-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <h4>Coach Certifié d'État</h4>
+                            <p>Expert en préparation physique et techniques de musculation en salle.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <div>
+                            <h4>Suivi Planifié</h4>
+                            <p>Des conseils réguliers pour ajuster tes entraînements et maximiser tes gains.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="services-header">
+            <span class="subtitle">Choisis ta formule</span>
+            <h2>Des Programmes Adaptés à <br><span>Tes Objectifs</span></h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Séance Solo</h3>
+                <div class="price">2 500 <span>FCFA / séance</span></div>
+                <p class="card-desc">Idéal pour tester ou pour un besoin ponctuel.</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> 1h de coaching privé</li>
+                    <li><i class="fa-solid fa-check"></i> Bilan corporel initial</li>
+                    <li><i class="fa-solid fa-check"></i> Accès aux équipements</li>
+                    <li class="disabled"><i class="fa-solid fa-xmark"></i> Plan nutritionnel</li>
+                </ul>
+                <a href="https://wa.me/22508620420" class="btn-card">Réserver maintenant</a>
+            </div>
+
+            <div class="service-card featured">
+                <div class="badge-featured">Le plus populaire</div>
+                <h3>Pack Mensuel</h3>
+                <div class="price">15 000 <span>FCFA / mois</span></div>
+                <p class="card-desc">Parfait pour installer une routine et voir de vrais résultats.</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> 4 séances par semaine</li>
+                    <li><i class="fa-solid fa-check"></i> Programme personnalisé</li>
+                    <li><i class="fa-solid fa-check"></i> Suivi de progression</li>
+                    <li><i class="fa-solid fa-check"></i> Conseils nutrition de base</li>
+                </ul>
+                <a href="https://wa.me/22508620420" class="btn-card standard">Choisir ce pack</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Suivi Élite</h3>
+                <div class="price">30 000 <span>FCFA / mois</span></div>
+                <p class="card-desc">L'accompagnement ultime pour une transformation radicale.</p>
+                <ul class="features">
+                    <li><i class="fa-solid fa-check"></i> Coaching illimité (7j/7)</li>
+                    <li><i class="fa-solid fa-check"></i> Plan nutritionnel sur-mesure</li>
+                    <li><i class="fa-solid fa-check"></i> Analyse vidéo des mouvements</li>
+                    <li><i class="fa-solid fa-check"></i> Support WhatsApp direct 24h/24</li>
+                </ul>
+                <a href="https://wa.me/22508620420" class="btn-card">Devenir Élite</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-header">
+            <span class="subtitle">Immersion</span>
+            <h2>La Salle & <span>Les Résultats</span></h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="/assets/gallerie1.jpg" class="focus-top" alt="Équipement de la salle">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="/assets/gallerie2.jpg" alt="Entraînement intense">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="/assets/gallerie3.jpg" alt="Espace musculation">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="/assets/gallerie4.jpg" class="focus-top" alt="Coaching personnalisé">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="subtitle">Des questions ?</span>
+                <h2>Prends Contact <span>Dès Aujourd'hui</span></h2>
+                <p>N'hésite pas à envoyer un message direct pour réserver ton créneau ou visiter la salle.</p>
+                <div class="info-links">
+                    <a href="https://wa.me/22508620420" class="info-item whatsapp"><i class="fa-brands fa-whatsapp"></i> Écris-nous sur WhatsApp</a>
+                    <div class="info-item"><i class="fa-solid fa-location-dot"></i> Abidjan, Côte d'Ivoire</div>
+                    <div class="info-item"><i class="fa-solid fa-clock"></i> Lun - Sam : 06h00 - 22h00</div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form class="contact-form">
+                    <input type="text" placeholder="Ton Nom Complet" required>
+                    <input type="tel" placeholder="Ton Numéro de Téléphone" required>
+                    <select required>
+                        <option value="" disabled selected>Choisis ta formule</option>
+                        <option value="solo">Séance Solo</option>
+                        <option value="mensuel">Pack Mensuel</option>
+                        <option value="elite">Suivi Élite</option>
+                    </select>
+                    <textarea placeholder="Ton Message ou Objectif (ex: Perte de poids...)" rows="5" required></textarea>
+                    <button type="submit" class="btn-submit">Envoyer la demande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

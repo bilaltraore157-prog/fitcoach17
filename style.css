@@ -1,0 +1,709 @@
+/* ==========================================================================
+   1. VARIABLES & RESET (Bases du site)
+   ========================================================================== */
+:root {
+    --primary-color: #ff5e00; /* Orange fitness énergique */
+    --dark-bg: #111111;       /* Fond sombre pro */
+    --light-text: #ffffff;
+    --gray-text: #aaaaaa;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;   /* Défilement fluide des ancres */
+    scroll-padding-top: 80px;  /* Empêche la navbar fixe de cacher le début des sections */
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    overflow-x: hidden;
+}
+
+/* Typographies globales secondaires */
+.subtitle {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   2. NAVBAR (Navigation standard pour PC)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(17, 17, 17, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--light-text);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-nav {
+    background-color: var(--primary-color);
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* Bouton Burger (Caché sur PC) */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001; /* Reste toujours au-dessus */
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (Zone d'accueil)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1920') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--gray-text);
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: black;
+}
+
+/* ==========================================================================
+   5. SECTION : À PROPOS / PHILOSOPHIE
+   ========================================================================== */
+.about-section {
+    padding: 100px 8%;
+    background-color: var(--dark-bg);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    position: relative;
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 94, 0, 0.3);
+}
+
+.experience-badge h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+}
+
+.experience-badge p {
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-content h2 span {
+    color: var(--primary-color);
+}
+
+.about-content .description {
+    color: var(--gray-text);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.credential-item i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+.credential-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.credential-item p {
+    color: var(--gray-text);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   6. SECTION SERVICES & TARIFS
+   ========================================================================== */
+.services-section {
+    padding: 100px 8%;
+    background-color: #1a1a1a; 
+    text-align: center;
+}
+
+.services-header {
+    margin-bottom: 60px;
+}
+
+.services-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.services-header h2 span {
+    color: var(--primary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 40px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.price span {
+    font-size: 14px;
+    color: var(--gray-text);
+    font-weight: 400;
+}
+
+.card-desc {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin-bottom: 30px;
+    line-height: 1.5;
+    min-height: 45px;
+}
+
+.features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.features li {
+    margin-bottom: 15px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features li i.fa-check {
+    color: #00ff66;
+}
+
+.features li i.fa-xmark {
+    color: #ff3333;
+}
+
+.features li.disabled {
+    color: #555555;
+    text-decoration: line-through;
+}
+
+.btn-card {
+    display: block;
+    padding: 12px 20px;
+    border: 2px solid var(--primary-color);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-card:hover {
+    background-color: var(--primary-color);
+}
+
+.service-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(255, 94, 0, 0.15);
+}
+
+.service-card.featured:hover {
+    transform: scale(1.03) translateY(-5px);
+}
+
+.badge-featured {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.btn-card.standard {
+    background-color: var(--primary-color);
+}
+.btn-card.standard:hover {
+    background-color: transparent;
+}
+
+/* ==========================================================================
+   7. SECTION GALERIE
+   ========================================================================== */
+.gallery-section {
+    padding: 100px 8%;
+    background-color: var(--dark-bg);
+    text-align: center;
+}
+
+.gallery-header {
+    margin-bottom: 50px;
+}
+
+.gallery-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.gallery-header h2 span {
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    height: 250px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Souplesse & cadrage : Évite de couper le haut des têtes sur les photos portraits */
+.gallery-item img.focus-top {
+    object-position: center top;
+}
+
+/* ==========================================================================
+   8. SECTION CONTACT
+   ========================================================================== */
+.contact-section {
+    padding: 100px 8%;
+    background-color: #1a1a1a;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.contact-info h2 span {
+    color: var(--primary-color);
+}
+
+.contact-info p {
+    color: var(--gray-text);
+    margin-bottom: 30px;
+}
+
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: var(--light-text);
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.info-item.whatsapp {
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    width: fit-content;
+    font-weight: 600;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #e05300;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE MEDIA QUERIES (Optimisation Globale Téléphones)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+    .hero-section {
+        padding-top: 100px; 
+        align-items: center;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    /* Fix de la visibilité globale de la Navbar */
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        
+        position: absolute;
+        right: 0px;
+        top: 100%; 
+        height: 80vh;
+        width: 100%;
+        background-color: rgba(17, 17, 17, 0.98);
+        backdrop-filter: blur(10px);
+        
+        /* Correction de la souplesse : courbe fluide cubic-bezier et position de départ adoucie (-110%) */
+        transform: translateY(-110%);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .nav-links.nav-active {
+        transform: translateY(0%);
+    }
+
+    .burger-menu {
+        display: block; /* Force l'apparition du bouton burger sur mobile */
+    }
+
+    .burger-menu.toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .burger-menu.toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+
+    /* Responsive de la section ABOUT */
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 400px; /* Évite que l'image soit géante sur mobile */
+        margin: 0 auto;
+    }
+
+    .experience-badge {
+        bottom: -10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+
+    .experience-badge h3 {
+        font-size: 24px;
+    }
+
+    .credential-item {
+        text-align: left;
+    }
+
+    /* Ajustements Galerie & Contact Mobile */
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .info-item {
+        justify-content: center;
+    }
+    
+    .info-item.whatsapp {
+        margin: 0 auto;
+    }
+    
+    .contact-info h2 {
+        font-size: 30px;
+    }
+}
