@@ -3,12 +3,12 @@
   "name": "Coach Fitness | Performance & Santé",
   "icons": [
     {
-      "src": "assets/logos.png",
+      "src": "assets/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "assets/logos.png",
+      "src": "assets/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
