@@ -1,0 +1,20 @@
+{
+  "short_name": "FitCoach",
+  "name": "Coach Fitness | Performance & Santé",
+  "icons": [
+    {
+      "src": "assets/logos.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/logos.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#111111",
+  "theme-color": "#ff5e00",
+  "display": "standalone"
+}
